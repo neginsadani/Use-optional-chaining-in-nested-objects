@@ -1,9 +1,5 @@
 function getUserContact(user) {
-  if (user.contact && user.contact.phone) {
-    return user.contact.phone;
-  } else {
-    return "Phone number not available";
-  }
+  return user.contact?.phone ?? "Phone number not available";
 }
 
 const userWithPhone = {
@@ -13,5 +9,6 @@ const userWithPhone = {
 
 const userWithoutPhone = { name: "Bob" };
 
-console.log(getUserContact(userWithPhone));
-console.log(getUserContact(userWithoutPhone));
+console.log(getUserContact(userWithPhone)); 
+console.log(getUserContact(userWithoutPhone)); 
+
